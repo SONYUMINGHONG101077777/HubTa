@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Prohm Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f37309;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1918;
+            padding: 15px;
+            color: rgb(212, 130, 7);
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .search-container {
+            margin: 20px;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: none;
+            border-radius: 5px;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .video-card {
+            width: 80%;
+            max-width: 400px;
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .video-card video, .video-card iframe {
+            width: 100%;
+            height: 100%;
+        }
+        #dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+        }
+        .dark-mode {
+            background-color: #2d2d2d;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .video-card {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Ta Prohm Hub</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Khmer.html">Khmer</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <button id="dark-mode-toggle">🌙</button>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search........">
+    </div>
+    <div class="video-container">
+        <div class="video-card">
+            <video controls>
+                <source src="IMG_1.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-card">
+            <video controls>
+                <source src="IMG_2.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-card">
+            <video controls>
+                <source src="IMG_2.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script>
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeToggle.textContent = "☀️";
+            } else {
+                darkModeToggle.textContent = "🌙";
+            }
+        });
+    </script>
+</body>
+</html>
